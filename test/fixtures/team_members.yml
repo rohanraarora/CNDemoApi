@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  bio: MyString
+  qualifications: MyString
+  teaching_experience: MyString
+  industry_experience: MyString
+
+two:
+  name: MyString
+  bio: MyString
+  qualifications: MyString
+  teaching_experience: MyString
+  industry_experience: MyString

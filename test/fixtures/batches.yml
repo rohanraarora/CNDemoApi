@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 
+  name: MyString
+  price: 1.5
+  start_date: 2016-08-30
+  schedule: 1
+  strength: 1
+  status: 1
+
+two:
+  course_id: 
+  name: MyString
+  price: 1.5
+  start_date: 2016-08-30
+  schedule: 1
+  strength: 1
+  status: 1

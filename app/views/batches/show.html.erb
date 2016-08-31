@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @batch.course %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @batch.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @batch.price %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @batch.start_date %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @batch.schedule %>
+</p>
+
+<p>
+  <strong>Strength:</strong>
+  <%= @batch.strength %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @batch.status %>
+</p>
+
+<%= link_to 'Edit', edit_batch_path(@batch) %> |
+<%= link_to 'Back', batches_path %>
