@@ -19,7 +19,7 @@
   <tbody>
     <% @batches.each do |batch| %>
       <tr>
-        <td><%= batch.course %></td>
+        <td><%= batch.course.name %></td>
         <td><%= batch.name %></td>
         <td><%= batch.price %></td>
         <td><%= batch.start_date %></td>

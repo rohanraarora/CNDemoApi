@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901101730) do
+ActiveRecord::Schema.define(version: 20160901104532) do
 
   create_table "batches", force: :cascade do |t|
     t.integer  "course_id"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20160901101730) do
   end
 
   add_index "batches", ["course_id"], name: "index_batches_on_course_id"
+
+  create_table "batches_team_members", id: false, force: :cascade do |t|
+    t.integer "batch_id",       null: false
+    t.integer "team_member_id", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"

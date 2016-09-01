@@ -2,7 +2,7 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @batch.course %>
+  <%= @batch.course.name %>
 </p>
 
 <p>
@@ -35,5 +35,11 @@
   <%= @batch.status %>
 </p>
 
+<h2>Instructors</h2>
+<p></p>
+<% @batch.team_members.each do |instructor| %>
+    <%= instructor.name %><br>
+<% end %>
+</p>
 <%= link_to 'Edit', edit_batch_path(@batch) %> |
 <%= link_to 'Back', batches_path %>

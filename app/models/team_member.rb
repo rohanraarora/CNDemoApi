@@ -1,6 +1,6 @@
 class TeamMember < ActiveRecord::Base
-
   has_many :social_profiles
+  has_and_belongs_to_many :batches
   has_attached_file :profile_pic, default_url: "/images/missing.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 

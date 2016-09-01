@@ -5,11 +5,29 @@ class BatchesController < ApplicationController
   # GET /batches.json
   def index
     @batches = Batch.all
+    respond_to do |format|
+      format.html {}
+      format.json {
+
+        data = Hash.new
+        data["batches"] = @batches
+        return_success_response(data, "Request Successful", 200)
+      }
+    end
   end
 
   # GET /batches/1
   # GET /batches/1.json
   def show
+    respond_to do |format|
+      format.html {}
+      format.json {
+
+        data = Hash.new
+        data["batche"] = @batche
+        return_success_response(data, "Request Successful", 200)
+      }
+    end
   end
 
   # GET /batches/new
@@ -69,6 +87,6 @@ class BatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def batch_params
-      params.require(:batch).permit(:course_id, :name, :price, :start_date, :schedule, :strength, :status)
+      params.require(:batch).permit(:course_id, :name, :price, :start_date, :schedule, :strength, :status ,:team_member_ids)
     end
 end

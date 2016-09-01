@@ -27,6 +27,10 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
+gem 'simple_form'
+
+gem 'enum_help'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
