@@ -31,6 +31,8 @@ gem 'simple_form'
 
 gem 'enum_help'
 
+gem 'rails_12factor'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,4 +55,8 @@ group :development do
   gem 'spring'
 
 end
+
+ruby "2.3.1"
+
+
 
