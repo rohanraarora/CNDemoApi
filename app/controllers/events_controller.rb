@@ -5,11 +5,27 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    respond_to do |format|
+      format.html {}
+      format.json {
+        data = Hash.new
+        data["events"] = @events
+        return_success_response(data, "Request Successful", 200)
+      }
+    end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    respond_to do |format|
+      format.html {}
+      format.json {
+        data = Hash.new
+        data["event"] = @event
+        return_success_response(data, "Request Successful", 200)
+      }
+    end
   end
 
   # GET /events/new

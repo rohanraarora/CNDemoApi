@@ -35,5 +35,30 @@
   <%= @event.speaker %>
 </p>
 
+
+<h2>Images</h2>
+<% @event.event_images.each do |event_image| %>
+    <p>
+      <%= image_tag(event_image.image.url , width: 100) do %>
+      <% end %>
+    </p>
+
+    <%= link_to 'Delete Image', [event_image.event, event_image],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
+<% end %>
+
+<h2>Add an Image:</h2>
+<%= form_for([@event, @event.event_images.build]) do |i| %>
+    <p>
+      <%= i.label :image %><br>
+      <%= i.file_field :image %>
+    </p>
+    <p>
+      <%= i.submit %>
+    </p>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

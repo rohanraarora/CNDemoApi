@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :team_members do
     resources :social_profiles
   end
-  resources :events
+  resources :events do
+    resources :event_images
+  end
   resources :courses
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
