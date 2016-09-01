@@ -1,6 +1,5 @@
 class CreateSocialProfiles < ActiveRecord::Migration
   def change
-    drop_table :social_profiles
     create_table :social_profiles do |t|
       t.string :label
       t.string :url
