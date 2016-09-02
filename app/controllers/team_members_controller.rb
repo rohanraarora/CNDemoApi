@@ -85,7 +85,11 @@ class TeamMembersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team_member
-      @team_member = TeamMember.find(params[:id])
+      begin
+       @team_member = TeamMember.find(params[:id])
+      rescue Exception =>  e
+        return return_error_response(e.exception.to_s,404)
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

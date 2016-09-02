@@ -1,5 +1,7 @@
 class BatchSerializer < ActiveModel::Serializer
-  attributes :id, :name, :price, :start_date, :schedule, :strength, :status, :course_id, :instructors
+  attributes :id, :name, :price, :start_date, :schedule, :strength, :status, :course_id
+
+  has_many :instructors, serializer: TeamMemberCompactSerializer
 
   def start_date
     object.start_date.to_s

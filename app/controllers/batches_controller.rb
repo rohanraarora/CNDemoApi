@@ -24,7 +24,7 @@ class BatchesController < ApplicationController
       format.json {
 
         data = Hash.new
-        data["batche"] = @batche
+        data["batch"] = @batch
         return_success_response(data, "Request Successful", 200)
       }
     end
@@ -43,6 +43,8 @@ class BatchesController < ApplicationController
   # POST /batches.json
   def create
     @batch = Batch.new(batch_params)
+    team_member_ids = params[:team_member_ids]
+
 
     respond_to do |format|
       if @batch.save
@@ -82,11 +84,16 @@ class BatchesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_batch
+      begin
       @batch = Batch.find(params[:id])
+      rescue Exception =>  e
+        return return_error_response(e.exception.to_s,404)
+      end
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def batch_params
-      params.require(:batch).permit(:course_id, :name, :price, :start_date, :schedule, :strength, :status ,:team_member_ids)
+      params.require(:batch).permit(:course_id, :name, :price, :start_date, :schedule, :strength, :status ,:team_member_ids => [])
     end
 end

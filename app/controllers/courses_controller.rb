@@ -82,7 +82,11 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      begin
+        @course = Course.find(params[:id])
+      rescue Exception =>  e
+        return return_error_response(e.exception.to_s,404)
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

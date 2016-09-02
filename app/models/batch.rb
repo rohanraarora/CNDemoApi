@@ -5,6 +5,8 @@ class Batch < ActiveRecord::Base
   enum status: [:open,:completed,:running]
   enum schedule: [:weekend, :weekdays]
 
+
+
   def as_json(options)
     BatchSerializer.new(self).as_json(root: false)
   end
